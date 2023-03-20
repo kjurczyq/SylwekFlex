@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- dodalem do testow-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--  koniec -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>MainBoard</title>
+  </head>
+  <body>
+    <p></p>
+
+    <button class="burger-btn">
+      <div class="burger-btn__box">
+        <div class="burger-btn__bars"></div>
+      </div>
+    </button>
+    <img class="logo" src="./img/logo_git.webp" />
+    <nav class="nav">
+      <!-- <img class="logo" src="./img/logo_git.webp" /> -->
+      <div class="nav__items">
+        <a href="#start" class="nav__item hight-nav">Start</a>
+        <a href="#aboutas" class="nav__item">O nas</a>
+        <a href="#services" class="nav__item">Usługi</a>
+        <a href="#price" class="nav__item">Ceny</a>
+        <a href="#contact" class="nav__item">Kontakt</a>
+      </div>
+    </nav>
+    <header class="header section" id="start">
+      <h1 class="header__heading">
+        Profeslonalna naprawa komputerów oraz elektroniki
+      </h1>
+      <p class="header__text">szybko, sprawnie i tanio</p>
+      <a href="#aboutas" class="header__btn btn-animation">Poznaj nas</a>
+      <div class="white-block white-block-left"></div>
+    </header>
+
+    <main class="main" id="aboutas">
+      <section class="aboutas section-padding section white-section">
+        <div class="wrapper">
+          <h2 class="section-aboutas">o nas</h2>
+          <div class="aboutas__box">
+            <div class="aboutas__box-img aboutas__box-img--right">
+              <img
+                src="./img/Sylwek.webp"
+                alt="Zdjęcie osoby"
+                class="aboutas__img"
+              />
+            </div>
+            <div class="aboutas__box-text">
+              <h3 class="aboutas__title">Wieloletnie doświadczenie</h3>
+              <p class="aboutas__text">
+                Firma MainBoard od około 10 lat zajmuję się pełną, profesjonalną
+                naprawą komputerów, płyt głównych oraz wymianą układów BGA.
+                Posiadamy niezbędne narzędzia oraz części, które pomogą usunąć
+                awarię spowodowane zalaniem urządzenia lub zbiciem wyświetlacza
+                monitora. Na co dzień wykorzystujemy mikroskop oraz niezbędne
+                narzędzia potrzebne do fachowej oceny i naprawy powierzonych nam
+                sprzętów. Ponadto posiadamy konieczną dokumentacje techniczną,
+                która zapewnia kompatybilność wszystkich napraw. Schemat takiego
+                działania zapewnia pełną zgodność wszystkich ścieżek zasilania
+                oraz komponentów z oryginalnym zamysłem producenta. Swoje
+                naprawy przeprowadzamy rzetelnie oraz trwale. Na wszystkie swoje
+                usługi wystawiamy swoim klientom gwarancje oraz pełne wsparcie.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero-img section">
+        <div class="white-block white-block-left"></div>
+        <div class="white-block white-block-right"></div>
+        <p class="hero-img__title">w swojej pracy kierujemy się</p>
+        <hr />
+
+        <div class="myjob-container">
+          <div class="myjob-passion myjob-box">
+            <h3>pasją</h3>
+            <div class="passion">
+              <i class="a"
+                ><img
+                  class="img-myjob"
+                  src="./icons/improvement-performance-icon.png"
+              /></i>
+            </div>
+          </div>
+          <div class="myjob-involvement myjob-box">
+            <h3>zaangażowaniem</h3>
+            <div class="involvement">
+              <img
+                class="img-myjob"
+                src="./icons/information-technology-icon.png"
+              />
+            </div>
+          </div>
+          <div class="myjob-honesty myjob-box">
+            <h3>uczciwością</h3>
+            <div class="honesty">
+              <img class="img-myjob" src="./icons/microservice-icon.png" />
+            </div>
+          </div>
+        </div>
+        <hr />
+      </section>
+
+      <section
+        class="services section-padding section white-section"
+        id="services"
+      >
+        <div class="wrapper">
+          <h2 class="services-description">nasze usługi obejmują naprawę</h2>
+
+          <div class="services__cards">
+            <div class="services__card" onclick="void(0)">
+              <div class="services__card-img services__card-img--first">
+                <h3 class="services__card-img-title">laptopów</h3>
+                <p class="services__card-img-info">sprawdź</p>
+              </div>
+              <div class="services__card-info">
+                <h3 class="services__card-info-title">laptopy</h3>
+                <ul class="services__card-info-list">
+                  <li class="services__card-info-list-item">Apple</li>
+                  <li class="services__card-info-list-item">Asus</li>
+                  <li class="services__card-info-list-item">Lenovo</li>
+                  <li class="services__card-info-list-item">Dell</li>
+                  <li class="services__card-info-list-item">
+                    oraz pozostałe np. HP, Acer, LG, Microsoft.
+                  </li>
+                </ul>
+                <button class="services__card-info-btn btn-animation">
+                  sprawdź
+                </button>
+              </div>
+            </div>
+            <div class="services__card" onclick="void(0)">
+              <div class="services__card-img services__card-img--second">
+                <h3 class="services__card-img-title">
+                  komputerów stacjonarnych
+                </h3>
+                <p class="services__card-img-info">sprawdź</p>
+              </div>
+              <div class="services__card-info">
+                <h3 class="services__card-info-title">podzespoły</h3>
+                <ul class="services__card-info-list">
+                  <li class="services__card-info-list-item">intel</li>
+                  <li class="services__card-info-list-item">amd</li>
+                  <li class="services__card-info-list-item">nvidia</li>
+                  <li class="services__card-info-list-item">radeon</li>
+                  <li class="services__card-info-list-item">
+                    oraz pozostałe np. wymiana pamięci RAM lub dysku twardego.
+                  </li>
+                </ul>
+                <button class="services__card-info-btn btn-animation">
+                  sprawdź
+                </button>
+              </div>
+            </div>
+            <div class="services__card" onclick="void(0)">
+              <div class="services__card-img services__card-img--third">
+                <h3 class="services__card-img-title">elektroniki</h3>
+                <p class="services__card-img-info">sprawdź</p>
+              </div>
+              <div class="services__card-info">
+                <h3 class="services__card-info-title">komputerów</h3>
+                <ul class="services__card-info-list">
+                  <li class="services__card-info-list-item">xbox</li>
+                  <li class="services__card-info-list-item">play station</li>
+                  <li class="services__card-info-list-item">zasilacze</li>
+                  <li class="services__card-info-list-item">kontrolery</li>
+                  <li class="services__card-info-list-item">
+                    oraz pozostałe np. HP, Acer, LG, Microsoft.
+                  </li>
+                </ul>
+                <button class="services__card-info-btn btn-animation">
+                  sprawdź
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

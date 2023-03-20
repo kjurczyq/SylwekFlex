@@ -1,0 +1,563 @@
+@import "./sass/colors";
+@import "./sass/mixins";
+@import "./sass/components";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "satoshiblack";
+  src: url("../satoshi-black-webfont.woff2") format("woff2"),
+    url("../satoshi-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "raleway-thin";
+  src: url("../fonts/Raleway-Thin.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "raleway-regular";
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "raleway-medium";
+  src: url("../fonts/Raleway-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "raleway-semibold";
+  src: url("../fonts/Raleway-SemiBold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "raleway-bold";
+  src: url("../fonts/Raleway-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "satoshiblack";
+}
+
+// h1 {
+//   font-family: "satoshiblack";
+//   font-weight: 30px;
+// }
+img.logo {
+  height: 60px;
+  // position: fixed;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  z-index: 1000;
+}
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  padding: 1em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+
+  &:focus {
+    outline: none;
+    border: 1px solid rgb(1, 119, 175);
+    border-radius: 8px;
+  }
+  &:hover {
+    .burger-btn__bars::after,
+    .burger-btn__bars::before {
+      width: 100%;
+    }
+  }
+  &__box {
+    position: relative;
+    width: 40px;
+    height: 30px;
+  }
+  &__bars,
+  &__bars::after,
+  &__bars::before {
+    @include burgerBtn;
+  }
+  &__bars {
+    width: 100%;
+    &::after {
+      top: 13px;
+      width: 60%;
+    }
+    &::before {
+      top: 27px;
+      width: 30%;
+      transition-delay: 0.1s;
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  background-image: $nav-color;
+  transform: translateX(100%);
+  z-index: 100;
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    color: black;
+    margin: 0.7em 0;
+    padding: 0.1em 1em;
+    text-align: center;
+    font-family: "raleway-medium", cursive;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background-color: rgb(0, 100, 157);
+      transform: scaleY(0);
+      transition: transform 0.3s;
+      content: "";
+    }
+    &:hover::before {
+      transform: scaleY(1);
+    }
+  }
+}
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
+}
+.hight-nav {
+  margin-top: 6em;
+}
+//Header///
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  height: 100vh;
+  text-align: center;
+  color: black;
+  @include heroImg("../img/pc_fix_small.webp");
+  // background-attachment: scroll;
+
+  &__heading {
+    font-family: "raleway-medium", cursive;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: black;
+    text-shadow: 1px 1px rgb(1, 119, 175);
+    // color: rgb(1, 119, 175);
+  }
+  &__text {
+    font-size: 2rem;
+    font-family: "raleway-bold", cursive;
+    color: rgb(1, 119, 175);
+    text-shadow: 1px 1px rgb(204, 200, 200);
+  }
+  &__btn {
+    background: rgb(1, 119, 175);
+    margin-top: 2em;
+    padding: 0.8em 1.6em;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    font-family: "raleway-bold", cursive;
+
+    &::before {
+      background-color: rgb(0, 100, 157);
+    }
+  }
+}
+//aboutas//--------//
+.aboutas__box-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.aboutas {
+  &__box {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+  }
+  &__img {
+    width: 80%;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    // margin-left: 4em;
+  }
+  &__title {
+    margin-bottom: 1.5em;
+    font-family: "raleway-medium", cursive;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 100;
+    color: black;
+    text-shadow: 1px 1px rgb(1, 119, 175);
+  }
+  &__text {
+    font-size: 1.9rem;
+    font-family: "raleway-medium", cursive;
+    margin-right: 1em;
+  }
+}
+.section-aboutas {
+  position: relative;
+  margin-bottom: 2em;
+  font-family: "raleway-medium", cursive;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 100;
+  color: black;
+  text-shadow: 1px 1px rgb(1, 119, 175);
+}
+.section-padding {
+  padding: 6em 2em;
+}
+//hero-img about my job////
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  @include heroImg("../img/board-small.webp");
+  overflow: hidden;
+
+  &__title {
+    position: relative;
+    margin-bottom: 2em;
+    font-family: "raleway-medium", cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: black;
+    text-shadow: 1px 1px rgb(1, 119, 175);
+  }
+}
+
+.myjob-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.myjob-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  height: 20%;
+  font-size: 2em;
+  text-transform: uppercase;
+  margin: 2em;
+  margin-bottom: 1.5em;
+  font-family: "raleway-medium", cursive;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: black;
+  text-shadow: 1px 1px rgb(1, 119, 175);
+}
+
+.img-myjob {
+  padding-top: 2em;
+  height: 130px;
+}
+section hr {
+  margin: 0 auto;
+  width: 90%;
+}
+hr {
+  width: 90%;
+  box-shadow: 1px 1px rgb(7, 51, 71);
+}
+////Services///////
+.services-description {
+  position: relative;
+  margin-bottom: 2em;
+  font-family: "raleway-medium", cursive;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 100;
+  color: black;
+  text-shadow: 1px 1px rgb(1, 119, 175);
+}
+
+.services {
+  &__card {
+    position: relative;
+    margin: 1em 0;
+    height: 450px;
+    color: black;
+    text-align: center;
+    perspective: 1000px;
+    text-transform: uppercase;
+    font-family: "raleway-medium", cursive;
+
+    &:hover {
+      .services__card-img {
+        transform: rotateY(-180deg);
+        opacity: 0;
+      }
+      .services__card-info {
+        transform: rotateY(0);
+        opacity: 1;
+      }
+    }
+
+    &-img {
+      padding: 2em;
+      height: 100%;
+      border-radius: 8px;
+      background-size: cover;
+      transition: transform 1s, opacity 1s;
+
+      &--first {
+        background-image: $light-white-gradient, url("../img/11.webp");
+      }
+      &--second {
+        background-image: $light-white-gradient, url("../img/11.webp");
+      }
+      &--third {
+        background-image: $light-white-gradient, url("../img/11.webp");
+      }
+      &-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "raleway-medium", cursive;
+        font-size: 2.5em;
+        color: black;
+        text-transform: uppercase;
+        position: relative;
+      }
+
+      &-info {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        font-size: 1.8em;
+      }
+    }
+    &-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 8px;
+      background-image: $services-color;
+      opacity: 0;
+      transition: transform 1s, opacity 1s;
+
+      &-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.2em;
+        font-family: "raleway-medium", cursive;
+        font-size: 2.3rem;
+        text-transform: uppercase;
+      }
+      &-list {
+        margin: 0 auto;
+        width: 70%;
+        list-style: none;
+        &-item {
+          padding: 1em;
+          font-size: 1.6em;
+          border-bottom: 1px solid black;
+          font-family: "raleway-medium", cursive;
+          text-transform: uppercase;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+      &-btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2em;
+        padding: 1em;
+        border-radius: 8px;
+        width: 80%;
+        border: none;
+        background-color: rgba(31, 72, 97, 0.686);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: "raleway-medium", cursive;
+
+        &::before {
+          background-color: rgb(0, 100, 157);
+        }
+      }
+    }
+  }
+}
+// }
+//MEDIA//
+@media (min-width: 357px) {
+  .aboutas__title {
+    text-align: center;
+  }
+  .aboutas__box-text {
+    margin-top: 1em;
+  }
+  .aboutas__text {
+    margin-right: 0em;
+    font-size: 1.7em;
+  }
+  .header {
+    @include heroImg("../img/micro-hero.webp");
+  }
+}
+@media (min-width: 576px) {
+  .aboutas__box-img {
+    width: 40%;
+  }
+  .aboutas__box-text {
+    width: 65%;
+  }
+  .aboutas__title {
+    text-align: left;
+  }
+
+  .aboutas__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .myjob-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .services {
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__card {
+      margin: 1em;
+      width: 45%;
+    }
+  }
+  .header {
+    @include heroImg("../img/pc_fix_small.webp");
+  }
+}
+@media (min-width: 765px) {
+  .white-block {
+    height: 50px;
+    width: 45%;
+  }
+  .services {
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__card {
+      margin: 1em;
+      width: 40%;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    @include heroImg("../img/pc_fix_big.webp");
+  }
+  .hero-img {
+    @include heroImg("../img/board-big.webp");
+  }
+  .burger-btn {
+    right: 50px;
+  }
+  img.logo {
+    margin-top: 3em;
+  }
+  .services {
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__card {
+      margin: 1em;
+      width: 25%;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .header__heading {
+    font-size: 3.5rem;
+  }
+  .header__text {
+    font-size: 2.5rem;
+  }
+}

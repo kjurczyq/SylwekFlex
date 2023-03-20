@@ -1,0 +1,17 @@
+@mixin burgerBtn {
+  position: absolute;
+  right: 0;
+  height: 5px;
+  content: "";
+  transition: width 0.3s;
+  background-color: rgb(1, 119, 175);
+}
+@mixin heroImg($bgImg) {
+  background-image: $light-white-gradient, url($bgImg);
+  background-size: cover;
+  background-position: center;
+  //   background-attachment: fixed;
+  /////testIOS
+  //   background-attachment: scroll;
+  //   min-height: 100vh;
+}
